@@ -31,7 +31,7 @@
 										</div>
 										<div class="user-menu-item-text">
 											<b>Kusnaedi</b>
-											<span>safafasdfasfasdfasdfafasfsafasdfasafasfasdfassdsfsdfasfasfssfasfasdfdfaasdfas</span>
+											<span>safafasdfasfasdfasdfhello sfasfssfasfasdfdfaasdfas</span>
 											<p class="item-age">10 Mins Ago</p>
 										</div>
 									</a>
