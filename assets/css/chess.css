@@ -1,0 +1,217 @@
+.body-bg
+{
+	background-color: #BFCFFF
+}
+
+.user-img
+{
+	width: 30px;
+}
+
+.user-name
+{
+	font-size: 14px;
+}
+
+.navbar
+{
+	height: 100;
+	right: 0;
+    left: auto; 
+}
+
+.navbar-list
+{
+	position: relative;
+	top: -10px;
+	
+}
+
+.navbar-list-item
+{
+	display: block;
+	float: left;
+}
+
+.beep 
+{
+	position: relative; 
+}
+ .beep:after 
+ {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    -webkit-animation: beeper 1s ease-out;
+            animation: beeper 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    opacity: 1; 
+}
+
+.beeper 
+{
+	-webkit-animation: beeper 1s ease-out;
+    animation: beeper 1s ease-out;
+	-webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+	opacity: 1; 
+}
+
+@-webkit-keyframes beeper 
+{
+	0% 
+	{
+		-webkit-transform: scale(0.1, 0.1);
+		opacity: 0.0; 
+	}
+	50% 
+	{
+		opacity: 1.0; 
+	}
+	100% 
+	{
+		-webkit-transform: scale(1.2, 1.2);
+		opacity: 0.0; 
+	} 
+}
+
+.user-menu-settings
+{
+	display: none;
+	position: absolute;
+}
+
+.user-menu:hover .user-menu-settings
+{
+	display: block;
+	z-index: 100;
+	height: 350px;
+    overflow: hidden;
+    position: absolute;
+    top: 30px;
+	float: left;
+	right: 0;
+    width: 300;
+    background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+}
+
+.user-menu-settings-profile
+{
+	display: none;
+}
+
+.user-name:hover .user-menu-settings-profile
+{
+	display: block;
+	z-index: 100;
+	height: 208px;
+    overflow: hidden;
+    position: absolute;
+    top: 30px;
+	float: left;
+	right: 0;
+    width: 300;
+    background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+}
+
+.user-menu-header
+{
+	color: blue;
+	padding: 15px;
+	font-size: 12;
+	background-color: #eee;
+}
+
+.user-menu-footer
+{
+	color: blue;
+	padding: 15px;
+	font-size: 12;
+	background-color: #eee;
+}
+
+.user-menu-list
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.user-menu-list-item
+{
+	border-bottom: solid 1px #F0F4F4;
+	margin: 10;
+	display: block;
+	height: 80px;
+}
+
+.user-menu-list-item-profile
+{
+	border-bottom: solid 1px #F0F4F4;
+	margin: 10;
+	display: block;
+	height: 30px;
+}
+
+.user-menu-list-item-read
+{
+	background-color: #fff;	
+}
+
+.user-menu-list-item-unread
+{
+	background-color: #eee;
+}
+
+.user-menu-item-img
+{
+	width: 51px;
+}
+
+.user-menu-item-text
+{
+	width: 230px;
+	position: relative;
+	top: -32px;
+	left: 50px;
+	font-size: 12;
+	word-wrap: break-word;
+}
+
+.item-age
+{
+	font-family: verdana;
+	font-size: 9px;
+	color: #aaa;
+}
+
+.main-art
+{
+	background-color: #fff;
+	position: absolute;
+	top: 60px;
+	left: 100px;
+	width:  calc(100% - 200px); 
+	height: 500px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 10px;
+}
+
+
+
+
+
