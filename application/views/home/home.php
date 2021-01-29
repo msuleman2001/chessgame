@@ -30,7 +30,7 @@
 											<div class="is-online"></div>
 										</div>
 										<div class="user-menu-item-text">
-											<b>Kusnaedi</b>
+											<b>shahid said</b>
 											<span>safafasdfasfasdfasdfhello sfasfssfasfasdfdfaasdfas</span>
 											<p class="item-age">10 Mins Ago</p>
 										</div>
