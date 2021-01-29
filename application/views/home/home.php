@@ -43,7 +43,7 @@
 											<div class="is-online"></div>
 										</div>
 										<div class="user-menu-item-text">
-											<b>Kusnaedi</b>
+											<b>ali said</b>
 											<span>safafasdfasfasdfasdfafasfsafasdfasafasfasdfassdsfsdfasfasfssfasfasdfdfaasdfas</span>
 											<p class="item-age">10 Mins Ago</p>
 										</div>
