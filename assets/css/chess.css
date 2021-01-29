@@ -45,7 +45,7 @@
     right: 8px;
     width: 10px;
     height: 10px;
-    background-color: orange;
+    background-color: green;
     border-radius: 50%;
     -webkit-animation: beeper 1s ease-out;
             animation: beeper 1s ease-out;
