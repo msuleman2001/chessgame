@@ -15,21 +15,21 @@
 						<a href="#" class="nav-link beep">
 							<i class="far fa-envelope"></i>
 						</a>
-						<div class="user-menu-settings">
-							<div class="user-menu-header">
+						<div class="user-menu-settings" style="overflow-y: scroll;">
+							<div class="user-menu-header" >
 								<b>Messages</b>
-								<div class="float-right">
+								<div class="float-right" >
 									<a href="#">Mark All As Read</a>
 								</div>
 							</div>
-							<ul class="user-menu-list">
+							<ul class="user-menu-list" >
 								<li class="user-menu-list-item user-menu-list-item-read">
 									<a href="#" class="">
-										<div class="user-menu-item-img">
+										<div class="user-menu-item-img" >
 											<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
 											<div class="is-online"></div>
 										</div>
-										<div class="user-menu-item-text">
+										<div class="user-menu-item-text" >
 											<b>shahid said</b>
 											<span>safafasdfasfasdfasdfhello sfasfssfasfasdfdfaasdfas</span>
 											<p class="item-age">10 Mins Ago</p>
@@ -100,7 +100,7 @@
 						<a href="#" class="nav-link beep">
 							<i class="far fa-bell"></i>
 						</a>
-						<div class="user-menu-settings">
+						<div class="user-menu-settings" style="overflow-y: scroll;">
 							<div class="user-menu-header">
 								<b>Notifications</b>
 								<div class="float-right">
