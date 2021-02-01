@@ -2970,3 +2970,13 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   100% {
     -webkit-transform: scale(1.2, 1.2);
     opacity: 0.0; } }
+	
+	::-webkit-scrollbar {
+width: 8px;
+background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background-color: #a9a9a9;
+}

@@ -85,7 +85,10 @@
 {
 	display: none;
 	position: absolute;
+	
 }
+
+
 
 .user-menu:hover .user-menu-settings
 {
@@ -282,6 +285,18 @@
 {
   background-color: #701786;
 }
+
+
+	::-webkit-scrollbar {
+width: 8px;
+background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background-color: #a9a9a9;
+}
+
 
 
 

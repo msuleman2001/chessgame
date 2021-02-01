@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylew.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/fa/css/all.css">
+
 	</head>
 	<body class="body-bg">
 		<nav class="navbar navbar-expand-lg main-navbar">
