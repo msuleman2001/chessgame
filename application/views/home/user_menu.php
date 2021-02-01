@@ -20,7 +20,7 @@
 							</div>
 							<div class="user-menu-item-text">
 								<b>shahid said</b>
-								<span>safafasdfasfasdfasdfhello sfasfssfasfasdfdfaasdfas</span>
+								<span>ssfasfasdfdfaasdfas</span>
 								<p class="item-age">10 Mins Ago</p>
 							</div>
 						</a>
