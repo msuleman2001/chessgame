@@ -286,15 +286,79 @@
   background-color: #701786;
 }
 
-
-	::-webkit-scrollbar {
-width: 8px;
-background: #f1f1f1;
+.card
+{
+	border: solid 1px red;
+	border-radius: 10px;
+	height: 150px;
+	width: 300px;
+	position: relative;
+	text-align: center;
+	background-color: green;
+	text-decoration: none;
 }
 
-::-webkit-scrollbar-thumb {
-border-radius: 10px;
-background-color: #a9a9a9;
+.card:hover
+{
+	opacity: 1;
+	text-decoration: none;
+}
+
+.card-quater-top-left
+{
+	top: 80px;
+	left: 120px;
+}
+
+.card-quater-top-right
+{
+	top: -70px;
+	left: 500px;
+}
+
+.timer
+{
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+
+.card-quater-bottom-left
+{
+	top: -30px;
+	left: 120px;
+}
+
+.card-quater-bottom-right
+{
+	top: -180px;
+	left: 500px;
+}
+
+.gizmo
+{
+	position: relative;
+	top:  30px;
+	left: 100px;
+	width: 400px;
+	height: 400px;
+}
+
+.player-card-you
+{
+	position: relative;
+	top: -350px;
+	left: 570px;
+	border: solid 1px red;
+}
+
+.player-card-opponent
+{
+	position: relative;
+	top: -300px;
+	left: 570px;
+	border: solid 1px red;
+	
 }
 
 

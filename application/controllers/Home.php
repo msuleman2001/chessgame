@@ -12,6 +12,11 @@ class Home extends CI_Controller {
 		$data['user_menu'] = $this->load->view('home/user_menu', $data, true);
 		$this->load->view('home/home');
 	}
+	
+	public function game()
+	{
+		$this->load->view('home/game');
+	}
 }
 
 ?>
