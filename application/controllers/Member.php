@@ -13,7 +13,7 @@ class Member extends CI_Controller {
 	
 	public function signup()
 	{
-		$this->load->view('member/signup.php');
+		$this->load->view('member/signup');
 	}
 	
 	public function change_password()
