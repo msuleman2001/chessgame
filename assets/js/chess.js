@@ -1,8 +1,9 @@
+
+
 //this function will run after timer end
 function startGame(base_url)
 {
 	setBoardColor('blue');
-	//initLocations(base_url);
 }
 
 //this function will setup the color of board
@@ -22,32 +23,37 @@ function allowDrop(ev)
 
 function drag(ev) 
 {
-	ev.dataTransfer.setData("mohra", ev.target.id);
+	var current_row = ev.target.parentElement.id[1];
+	var current_col = ev.target.parentElement.id[2];
+	var piece_type = getPiece(ev.target.id);
+	var allowed_cells[] = generateAllowedCells(piece_type, current_row, current_col);
+	ev.dataTransfer.setData("piece", ev.target.id);
 }
 
 function drop(ev) 
 {
 	ev.preventDefault();
-	var data = ev.dataTransfer.getData("mohra");
+	var data = ev.dataTransfer.getData("piece");
 	ev.target.appendChild(document.getElementById(data));
 }
 
-//this function will initialize the pawns locations
-function initLocations(base_url)
+function getPiece(piece_id)
 {
-	var tblChessboard = document.getElementById('tblChessboard');
-	var row = 0;
-	var col = 0;
-	//making empty cells
-	for(row= 0; row < 8; row++)
-		for(col = 0; col < 8; col++)
-			tblChessboard.rows[row].cells[col].innerHTML = '';
+	if (piece_id[1] == 'P')
+		return 'pawn';
+	if (piece_id[1] == 'r')
+		return 'rock';
+	if (piece_id[1] == 'n')
+		return 'knight';
+	if (piece_id[1] == 'b')
+		return 'bishop';
+	if (piece_id[1] == 'q')
+		return 'queen';
+	if (piece_id[1] == 'k')
+		return 'king';
+}
 
-	//setting black pawns
-	for (col = 0; col < 8; col++)
-		tblChessboard.rows[1].cells[col].innerHTML = '<img height="30px" src="' + base_url + 'assets/img/pawns/bP.png" />';
+function generateAllowedCells(piece_type, current_row, current_col)
+{
 	
-	tblChessboard.rows[0].cells[0].innerHTML = '<img height="30px" src="' + base_url + 'assets/img/pawns/bR.png">';
-	tblChessboard.rows[0].cells[1].innerHTML = '<img height="30px" src="' + base_url + 'assets/img/pawns/bN.png">';
-	tblChessboard.rows[0].cells[1].innerHTML = '<img height="30px" src="' + base_url + 'assets/img/pawns/bB.png">';
-} 
+}
