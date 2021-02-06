@@ -64,7 +64,7 @@ function drop(ev)
 	var to_drop_row = parseInt(cell_id[1]);
 	var to_drop_col = parseInt(cell_id[2]);
 	var is_allowed = isInAllowedCells(to_drop_row, to_drop_col);
-	
+
 	if (!is_allowed)
 		return;
 	
@@ -96,7 +96,7 @@ function generateAllowedCells(piece_id, current_row, current_col)
 	var new_col = 0;
 	
 	selected_piece_type = getPieceType(piece_id);
-
+	
 	//for pawn moves
 	if (selected_piece_type.endsWith('pawn'))
 	{
@@ -180,36 +180,142 @@ function generateAllowedCells(piece_id, current_row, current_col)
 	
 	if (selected_piece_type == 'rock')
 	{
-		for (var row = current_row; row < 8; row++)
+		for (var row = current_row + 1; row < 8; row++)
 		{
-			var this_cell = findAndPushCell(row, current_col);
-			if (this_cell == 'out' || this_cell == 'friend')
+			var new_cell = findAndPushCell(row, current_col);
+			if (new_cell == 'out' || new_cell != 'empty')
 				break;
 		}
 		
-		for (var row = current_row; row >= 0; row--)
+		for (var row = current_row - 1; row >= 0; row--)
 		{
-			var this_cell = findAndPushCell(row, current_col);
-			if (this_cell == 'out' || this_cell == 'friend')
+			var new_cell = findAndPushCell(row, current_col);
+			if (new_cell == 'out' || new_cell != 'empty')
 				break;
 		}
 		
-		for (var col = current_col; col < 8; col++)
+		for (var col = current_col + 1; col < 8; col++)
 		{
-			var this_cell = findAndPushCell(current_row, col);
-			if (this_cell == 'out' || this_cell == 'friend')
+			var new_cell = findAndPushCell(current_row, col);
+			if (new_cell == 'out' || new_cell != 'empty')
 				break;
 		}
 		
-		for (var col = current_col; col >= 0; col--)
+		for (var col = current_col - 1; col >= 0; col--)
 		{
-			var this_cell = findAndPushCell(current_row, col);
-			if (this_cell == 'out' || this_cell == 'friend')
+			var new_cell = findAndPushCell(current_row, col);
+			if (new_cell == 'out' || new_cell != 'empty')
 				break;
 		}
 	}
 	
-	return cells;
+	if (selected_piece_type == 'bishop')
+	{
+		var new_row = current_row + 1;
+		var new_col = current_col + 1;
+				
+		for(var i = 0; i < 8; i++)
+		{
+			var new_cell = findAndPushCell(new_row++, new_col++);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		new_row = current_row + 1;
+		new_col = current_col - 1;
+		for(var i = 0; i < 8; i++)
+		{
+			var new_cell = findAndPushCell(new_row++, new_col--);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		new_row = current_row - 1;
+		new_col = current_col - 1;
+		for(var i = 0; i < 8; i++)
+		{
+			var new_cell = findAndPushCell(new_row--, new_col--);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		new_row = current_row - 1;
+		new_col = current_col + 1;
+		for(var i = 0; i < 8; i++)
+		{
+			var new_cell = findAndPushCell(new_row--, new_col++);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+	}
+	
+	if (selected_piece_type == 'queen')
+	{
+		for (var row = current_row + 1; row < 8; row++)
+		{
+			var new_cell = findAndPushCell(row, current_col);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		for (var row = current_row - 1; row >= 0; row--)
+		{
+			var new_cell = findAndPushCell(row, current_col);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		for (var col = current_col + 1; col < 8; col++)
+		{
+			var new_cell = findAndPushCell(current_row, col);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		for (var col = current_col - 1; col >= 0; col--)
+		{
+			var new_cell = findAndPushCell(current_row, col);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		var new_row = current_row + 1;
+		var new_col = current_col + 1;
+				
+		for(var i = 0; i < 8; i++)
+		{
+			var new_cell = findAndPushCell(new_row++, new_col++);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		new_row = current_row + 1;
+		new_col = current_col - 1;
+		for(var i = 0; i < 8; i++)
+		{
+			var new_cell = findAndPushCell(new_row++, new_col--);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		new_row = current_row - 1;
+		new_col = current_col - 1;
+		for(var i = 0; i < 8; i++)
+		{
+			var new_cell = findAndPushCell(new_row--, new_col--);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+		
+		new_row = current_row - 1;
+		new_col = current_col + 1;
+		for(var i = 0; i < 8; i++)
+		{
+			var new_cell = findAndPushCell(new_row--, new_col++);
+			if (new_cell == 'out' || new_cell != 'empty')
+				break;
+		}
+	}
 }
 
 function isInBound(row, col)
@@ -226,6 +332,7 @@ function findAndPushCell(row, col)
 	if (isInBound(row, col))
 	{
 		var next_cell = findPieceInCell(row, col);
+		
 		if (next_cell == '' || areEnemies(next_cell, selected_piece_id))
 			allowed_cells.push([row, col]);
 		
@@ -233,7 +340,7 @@ function findAndPushCell(row, col)
 			return 'empty';
 		if (areEnemies(next_cell, selected_piece_id))
 			return 'enemy';
-		if (areEnemies(next_cell, selected_piece_id))
+		if (!areEnemies(next_cell, selected_piece_id))
 			return 'friend';
 	}
 	else
