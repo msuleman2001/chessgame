@@ -11,7 +11,6 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/fa/css/all.css">
 		
-		<script src="js/chess.js"></script>
 	</head>
 	<body class="body-bg">
 		<nav class="navbar navbar-expand-lg main-navbar">
@@ -30,58 +29,69 @@
 			<div id="divChessboard" class="chessboard">
 				<table id="tblChessboard" width="100%" height="100%">
 					<tr>
-						<td height="50px" width="50px" align="center" valign="middle" id="c11" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c00" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="br1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bR.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c12" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c01" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bn1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bN.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c13" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c02" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bB.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c14" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c03" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bk" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bK.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c15" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c04" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bq" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bQ.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c16" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c05" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bb2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bB.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c17" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c06" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bn2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bN.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c11" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c07" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="br2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bR.png">
 						</td>
 					</tr>
 					<tr>
-						<td height="50px" width="50px" align="center" valign="middle" id="c21" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c10" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bP1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c22" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c11" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bP2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c23" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c12" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bP3" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c24" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c13" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bP4" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c25" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c14" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bP5" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c26" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c15" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bP6" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c27" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c16" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bP7" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c28" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c17" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bP8" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
 						</td>
 					</tr>
 					<tr>
+						<td height="50px" width="50px" align="center" valign="middle" id="c20" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c21" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c22" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c23" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c24" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c25" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c26" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c27" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+					</tr>
+					<tr>
+						<td height="50px" width="50px" align="center" valign="middle" id="c30" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c31" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c32" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c33" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
@@ -89,87 +99,76 @@
 						<td height="50px" width="50px" align="center" valign="middle" id="c35" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c36" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c37" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c38" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 					</tr>
 					<tr>
-						<td height="50px" width="50px" align="center" valign="middle" id="c41" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c40" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c41"ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c42" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c43" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c44" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c45" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c46" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c47" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c48" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 					</tr>
 					<tr>
+						<td height="50px" width="50px" align="center" valign="middle" id="c50" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c51" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c52"ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+						<td height="50px" width="50px" align="center" valign="middle" id="c52" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c53" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c54" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c55" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c56" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c57" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c58" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
 					</tr>
 					<tr>
-						<td height="50px" width="50px" align="center" valign="middle" id="c61" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c62" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c63" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c64" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c65" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c66" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c67" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c68" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-					</tr>
-					<tr>
-						<td height="50px" width="50px" align="center" valign="middle" id="c71" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c60" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wP1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c72" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c61" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wP2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c73" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c62" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wP3" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c74" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c63" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wP4" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c75" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c64" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wP5" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c76" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c65" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wP6" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c77" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c66" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wP7" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c78" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c67" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wP8" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
 						</td>
 					</tr>
 					<tr>
-						<td height="50px" width="50px" align="center" valign="middle" id="c81" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c70" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wr1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wR.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c82" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c71" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wn1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wN.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c83" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c72" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wB.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c84" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c73" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wq" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wQ.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c85" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wK" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wK.png">
+						<td height="50px" width="50px" align="center" valign="middle" id="c74" ondrop="drop(event)" ondragover="allowDrop(event)">
+							<img id="wk" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wK.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c86" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c75" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wB.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c87" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" width="50px" align="center" valign="middle" id="c76" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wn2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wN.png">
 						</td>
-						<td height="50px" width="50px" align="center" ondragstart="drag(event)" valign="middle" id="c88" >
+						<td height="50px" width="50px" align="center" valign="middle" id="c77" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="wr2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wR.png">
 						</td>
 					</tr>
@@ -204,6 +203,7 @@
 							<td></td>
 						</tr>
 					</table>
+					<div id="output1"></div>
 				</div>
 			</div>
 			<div class="card player-card">
@@ -235,6 +235,7 @@
 							<td></td>
 						</tr>
 					</table>
+					<div id="output2"></div>
 				</div>
 			</div>
 			<div class="player-card">
@@ -260,7 +261,9 @@
 					</div>
 				</div>
 			</div>
+			<div id="output"></div>
 		</div>
+		<input type="hidden" id="hidBaseURL" value="<?php echo base_url(); ?>"/>
 		<script src="<?php echo base_url();?>assets/chessboardjs-1.0.0/js/chessboard-1.0.0.js"></script>
 		<script src="<?php echo base_url();?>assets/chessboardjs-1.0.0/js/chessboard-1.0.0.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
@@ -281,7 +284,7 @@
 				if (seconds_rem < 5)
 				{
 					clearInterval(timer);
-					startGame('<?php echo base_url(); ?>');
+					startGame('<?php echo base_url();?>');
 				}				
 			}			
 		</script>
