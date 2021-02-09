@@ -30,54 +30,54 @@
 				<table id="tblChessboard" width="100%" height="100%">
 					<tr>
 						<td height="50px" width="50px" align="center" valign="middle" id="c00" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="br1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bR.png">
+							<img id="br1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/br.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c01" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bn1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bN.png">
+							<img id="bn1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bn.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c02" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bB.png">
+							<img id="bb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bb.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c03" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bk" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bK.png">
+							<img id="bk" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bk.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c04" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bq" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bQ.png">
+							<img id="bq" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bq.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c05" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bb2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bB.png">
+							<img id="bb2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bb.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c06" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bn2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bN.png">
+							<img id="bn2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bn.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c07" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="br2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bR.png">
+							<img id="br2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/br.png">
 						</td>
 					</tr>
 					<tr>
 						<td height="50px" width="50px" align="center" valign="middle" id="c10" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bP1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
+							<img id="bp1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c11" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bP2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
+							<img id="bp2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c12" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bP3" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
+							<img id="bp3" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c13" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bP4" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
+							<img id="bp4" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c14" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bP5" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
+							<img id="bp5" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c15" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bP6" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
+							<img id="bp6" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c16" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bP7" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
+							<img id="bp7" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c17" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="bP8" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bP.png">
+							<img id="bp8" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bp.png">
 						</td>
 					</tr>
 					<tr>
@@ -122,54 +122,54 @@
 					</tr>
 					<tr>
 						<td height="50px" width="50px" align="center" valign="middle" id="c60" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wP1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
+							<img id="wp1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c61" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wP2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
+							<img id="wp2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c62" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wP3" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
+							<img id="wp3" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c63" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wP4" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
+							<img id="wp4" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c64" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wP5" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
+							<img id="wp5" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c65" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wP6" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
+							<img id="wp6" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c66" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wP7" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
+							<img id="wp7" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wp.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c67" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wP8" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wP.png">
+							<img id="wp8" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wp.png">
 						</td>
 					</tr>
 					<tr>
 						<td height="50px" width="50px" align="center" valign="middle" id="c70" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wr1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wR.png">
+							<img id="wr1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wr.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c71" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wn1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wN.png">
+							<img id="wn1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wn.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c72" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wB.png">
+							<img id="wb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wb.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c73" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wq" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wQ.png">
+							<img id="wq" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wq.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c74" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wk" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wK.png">
+							<img id="wk" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wk.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c75" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wB.png">
+							<img id="wb1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wb.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c76" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wn2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wN.png">
+							<img id="wn2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wn.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c77" ondrop="drop(event)" ondragover="allowDrop(event)">
-							<img id="wr2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wR.png">
+							<img id="wr2" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/wr.png">
 						</td>
 					</tr>
 				</table>

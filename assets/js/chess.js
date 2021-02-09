@@ -3,6 +3,42 @@ var output = document.getElementById('output');//this temprary to show output
 var output1 = document.getElementById('output1');
 var output2 = document.getElementById('output2');
 
+var black_pieces = {[id : "bp1", row : 1, col : 0],
+					[id : "bp2", row : 1, col : 1],
+					[id : "bp3", row : 1, col : 2],
+					[id : "bp4", row : 1, col : 3],
+					[id : "bp5", row : 1, col : 4],
+					[id : "bp6", row : 1, col : 6],
+					[id : "bp7", row : 1, col : 6],
+					[id : "bp8", row : 1, col : 7],
+					[id : "br1", row : 0, col : 0],
+					[id : "bn1", row : 0, col : 1],
+					[id : "bb1", row : 0, col : 2],
+					[id : "bk", row : 0, col : 3],
+					[id : "bq", row : 0, col : 4],
+					[id : "bb2", row : 0, col : 5],
+					[id : "bn2", row : 0, col : 6],
+					[id : "br2", row : 0, col : 7]
+				   };
+
+var white_pieces = {[id : "wp1", row : 6, col : 0],
+					[id : "wp2", row : 6, col : 1],
+					[id : "wp3", row : 6, col : 2],
+					[id : "wp4", row : 6, col : 3],
+					[id : "wp5", row : 6, col : 4],
+					[id : "wp6", row : 6, col : 6],
+					[id : "wp7", row : 6, col : 6],
+					[id : "wp8", row : 6, col : 7],
+					[id : "wr1", row : 7, col : 0],
+					[id : "wn1", row : 7, col : 1],
+					[id : "wb1", row : 7, col : 2],
+					[id : "wq", row : 7, col : 3],
+					[id : "wk", row : 7, col : 4],
+					[id : "wb2", row : 7, col : 5],
+					[id : "wn2", row : 7, col : 6],
+					[id : "wr2", row : 7, col : 7]
+				   };
+var killed_piece_id = '';
 var current_row = -1;
 var current_col = -1;
 var selected_piece_type = '';
@@ -11,12 +47,12 @@ var hidBaseURL = document.getElementById('hidBaseURL');
 //this is initial setup for chessboard
 var chess_board = [
 	['br1', 'bn1', 'bb1', 'bk', 'bq', 'bb2', 'bn2', 'br2'],
-	['bP1', 'bP2', 'bP3', 'bP4', 'bP5', 'bP6', 'bP7', 'bP8'],
+	['bp1', 'bp2', 'bp3', 'bp4', 'bp5', 'bp6', 'bp7', 'bp8'],
 	['', '', '', '', '', '', '', ''],
 	['', '', '', '', '', '', '', ''],
 	['', '', '', '', '', '', '', ''],
 	['', '', '', '', '', '', '', ''],
-	['wP1', 'wP2', 'wP3', 'wP4', 'wP5', 'wP6', 'wP7', 'wP8'],
+	['wp1', 'wp2', 'wp3', 'wp4', 'wp5', 'wp6', 'wp7', 'wp8'],
 	['wr1', 'wn1', 'wb1', 'wq', 'wk', 'wb2', 'wn2', 'wr2'],
 ];
 
@@ -69,13 +105,16 @@ function drop(ev)
 		return;
 	
 	updateChessboard(to_drop_row, to_drop_col);
+	alert();
+	updatePieceLocation(to_drop_row, to_drop_col);
+	//isCheck();
 }
 
 function getPieceType(piece_id)
 {
-	if (piece_id.startsWith('bP'))
+	if (piece_id.startsWith('bp'))
 		return 'blackpawn';
-	if (piece_id.startsWith('wP'))
+	if (piece_id.startsWith('wp'))
 		return 'whitepawn';
 	if (piece_id[1] == 'r')
 		return 'rock';
@@ -374,6 +413,10 @@ function isInAllowedCells(to_drop_row, to_drop_col)
 function updateChessboard(drop_row, drop_col)
 {
 	chess_board[current_row][current_col] = '';
+	
+	if (chess_board[drop_row][drop_col] != '')
+		killed_piece_id = chess_board[drop_row][drop_col];
+	
 	chess_board[drop_row][drop_col] = selected_piece_id;
 	
 	renderChessboard();
@@ -385,6 +428,25 @@ function renderChessboard()
 	for (var row = 0; row < 8; row++)
 		for (var col = 0; col < 8; col++)
 			tblChessboard.rows[row].cells[col].innerHTML = generatePieceHTMLImageTag(chess_board[row][col]);
+}
+
+function updatePieceLocation(row, col)
+{
+	alert(black_pieces['br1'].row);
+	return;
+	var moved_piece_vector = [];
+	var killed_piece_vector = [];
+	if (selected_piece_id.startsWith('b'))
+		moved_piece_vector = black_pieces;
+	else
+		moved_piece_vector = white_pieces;
+	
+	
+	if (killed_piece_id != '')
+		if (killed_piece_id.startsWith('b'))
+			killed_piece_vector = black_pieces;
+		else
+			killed_piece_vector = white_pieces;
 }
 
 function generatePieceHTMLImageTag(piece_id)
@@ -401,7 +463,26 @@ function generatePieceHTMLImageTag(piece_id)
 	return img_str;
 }
 
-
+function isCheck()
+{
+	//get list of all friends of selected piece by id
+	var friends = [];
+	for(var row = 0; row < 8; row++)
+		for(var col = 0; col < 8; col++)
+			if (chess_board[row][col] != '')
+				if (selected_piece_id[0] == chess_board[row][col][0])
+				{
+					generateAllowedCells(chess_board[row][col], row, col);
+					for (var i = 0; i < allowed_cells; i++)
+					{
+						output.innerHTML += chess_board[row][col] + ':' + row + ',' + col + '<br>';
+					}
+				}				
+				
+	//for each allowed cell find the piece in allowed cells
+	//if piece in allowed cell is enemy check it is king
+	//if this is king then this is check
+}
 
 function printChessboard()
 {
