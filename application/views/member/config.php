@@ -11,12 +11,12 @@
  // Include the autoloader provided in the SDK
 require_once(__DIR__.'/Facebook/autoload.php');
 
-define('APP_ID', '884326105710726');
-define('APP_SECRET', '8dd7813d2241e72001e56b75720614d3');
-define('API_VERSION', 'v1.0');
-define('FB_BASE_URL', 'https://onlinebestchessgame.000webhostapp.com/index.php/member');
+define('APP_ID', '1413084692368823');
+define('APP_SECRET', '22bcfdc81cae20de7241be3e047365f6');
+define('API_VERSION', 'v2.5');
+define('FB_BASE_URL', 'http://localhost/chessgame/index.php/member');
 
-define('BASE_URL', 'https://onlinebestchessgame.000webhostapp.com');
+define('BASE_URL', 'http://localhost/chessgame/index.php/member');
 
 if(!session_id()){
     session_start();

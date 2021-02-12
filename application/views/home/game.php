@@ -177,7 +177,7 @@
 			<div class="card player-card">
 				<div class="card-player-header">
 					<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
-					<a href="#">Your name</a>
+					<a href="#">Your name: <?php echo $_SESSION['fb_user_name']; </a>
 					<div class="player-time">00</div>
 				</div>
 				<div>
