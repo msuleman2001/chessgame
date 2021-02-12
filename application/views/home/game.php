@@ -1,13 +1,6 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/chess.css">
-		
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/chessboardjs-1.0.0/css/chessboard-1.0.0.css">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/chessboardjs-1.0.0/css/chessboard-1.0.0.min.css">
-		
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/chess.css">
-		
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylew.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/fa/css/all.css">
 		
@@ -175,18 +168,16 @@
 				</table>
 			</div>
 			<div class="card player-card">
-				<div class="card-player-header">
+				<div class="card-player-header header-black">
 					<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
-					<a href="#">Your name: <?php echo $_SESSION['fb_user_name']; </a>
+					<a href="#">Your name</a>
 					<div class="player-time">00</div>
+					<a href="#">Your name</a>
+					<div id="divBlackTimer" class="player-time">00</div>
 				</div>
 				<div>
-					<table border="1" width="100%" height="60px">
+					<table id="tblKilledWhite" width="100%" height="60px">
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -197,6 +188,14 @@
 							<td></td>
 							<td></td>
 							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -207,18 +206,14 @@
 				</div>
 			</div>
 			<div class="card player-card">
-				<div class="card-player-header">
+				<div class="card-player-header header-white">
 					<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
 					<a href="#">Your name</a>
-					<div class="player-time">00</div>
+					<div id="divWhiteTimer" class="player-time">00</div>
 				</div>
 				<div>
-					<table border="1" width="100%" height="60px">
+					<table id="tblKilledBlack" width="100%" height="60px">
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -229,6 +224,14 @@
 							<td></td>
 							<td></td>
 							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -272,7 +275,6 @@
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/chess.js"></script>
 		<script>
-			
 			var timer = setInterval(gameStartTimer, 1000);
 			var seconds_rem = 5;
 			var divTimer = document.getElementById('divTimer');
