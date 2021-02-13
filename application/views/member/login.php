@@ -79,11 +79,15 @@ else
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylew.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/fa/css/all.css">
+		
+		<meta name="google-signin-client_id" content="726505064962-466c8l12n8d7i6ctt5di26npl1uej3jf.apps.googleusercontent.com">
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
 	</head>
 	<body class="body-bg">
 		<nav class="navbar navbar-expand-lg main-navbar">
 			<div class="mr-auto"></div>
 		</nav>
+		<button onclick="signOut()">Sign out</button>
 		<div class="main-art">
 			<div class="two-col-left">
 				<form id="frmLogin" method="post" action="#" class="needs-validation" novalidate="">
@@ -147,6 +151,7 @@ else
 						Twitter
 					</a>
 				</div>
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
 				<div class="form-group">
 					<a href="#" class="gg btn-social" tabindex="4">
 						<i class="fab fa-google"></i>
@@ -161,6 +166,19 @@ else
 				</div>
 			</div>
 		</div>
+		<script>
+    function onSignIn(googleUser) {
+      // get user profile information
+      console.log(googleUser.getBasicProfile())
+    }
+	
+	function signOut() {
+  gapi.auth2.getAuthInstance().signOut().then(function() {
+    console.log('user signed out')
+  })
+}
+  </script>
+  
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/scripts.js"></script>
 		<script src="js/custom.js"></script>
