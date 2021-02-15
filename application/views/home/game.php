@@ -171,9 +171,7 @@
 				<div class="card-player-header header-black">
 					<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
 					<a href="#">Your name</a>
-					<div class="player-time">00</div>
-					<a href="#">Your name</a>
-					<div id="divBlackTimer" class="player-time">00</div>
+					<div id="divBlackTimer" class="player-time"></div>
 				</div>
 				<div>
 					<table id="tblKilledWhite" width="100%" height="60px">
@@ -209,7 +207,7 @@
 				<div class="card-player-header header-white">
 					<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
 					<a href="#">Your name</a>
-					<div id="divWhiteTimer" class="player-time">00</div>
+					<div id="divWhiteTimer" class="player-time"></div>
 				</div>
 				<div>
 					<table id="tblKilledBlack" width="100%" height="60px">

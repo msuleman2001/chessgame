@@ -8,7 +8,6 @@ var piece_locations = {"bp1": [1, 0], "bp2": [1, 1], "bp3": [1, 2], "bp4": [1, 3
 					   "wp1": [6, 0], "wp2": [6, 1], "wp3": [6, 2], "wp4": [6, 3], "wp5": [6, 4], "wp6": [6, 5], "wp7": [6, 6], "wp8": [6, 7],
 					   "wr1": [7, 0], "wn1": [7, 1], "wb1": [7, 2], "wq": [7, 3], "wk": [7, 4], "wb2": [7, 5], "wn2": [7, 6], "wr2": [7, 7]};
 					
-					
 var allowed_cells = {"bp1": [[2, 0], [3, 0]],
                       "bp2": [[2, 1], [3, 1]],
 					  "bp3": [[2, 2], [3, 2]],
@@ -52,6 +51,8 @@ var current_col = -1;
 var selected_piece_type = '';
 var selected_piece_id = '';
 var is_check = false;
+var king_in_check = '';
+var check_piece = '';
 var killed_index_black = 0;
 var killed_index_white = 0;
 var hidBaseURL = document.getElementById('hidBaseURL');
@@ -110,6 +111,13 @@ function drop(ev)
 	else
 		cell_id = ev.target.id;
 	
+	var king_id = '';
+	
+	if (selected_piece_id.startsWith('b'))
+		king_id = 'bk';
+	else
+		king_id = 'wk';
+	
 	var to_drop_row = parseInt(cell_id[1]);
 	var to_drop_col = parseInt(cell_id[2]);
 	
@@ -118,9 +126,8 @@ function drop(ev)
 	if (!is_allowed)
 		return;
 	
-	//var test_check = testCheck();
-	//if (test_check)
-		//return;
+	var chess_board_copy = JSON.parse(JSON.stringify(chess_board));
+	var allowed_cells_copy = JSON.parse(JSON.stringify(allowed_cells));
 	
 	var target_piece_id = getPieceInCell(to_drop_row, to_drop_col);
 	killed_piece_id = '';
@@ -129,29 +136,48 @@ function drop(ev)
 		if (areEnemies(selected_piece_id, target_piece_id))
 			killed_piece_id = target_piece_id;
 	
-	if (isCheckMate())
-	{
-		//Call modal to end game
-		return;
-	}
 	if (killed_piece_id != '')
 	{
 		delete piece_locations[killed_piece_id];
 		delete allowed_cells[killed_piece_id];
-		updateKilledPieceTable();
-		killed_piece_id = '';
+		if (check_piece == killed_piece_id)
+			is_check = false;
 	}
+	updateChessboard(to_drop_row, to_drop_col);
+	for (var piece in allowed_cells)
+		if (piece != '')
+			if (piece == selected_piece_id)
+				generateAllowedCells(selected_piece_id, to_drop_row, to_drop_col);
+			else
+				generateAllowedCells(piece, piece_locations[piece][0], piece_locations[piece][1]);
+	
+	if (is_check)
+		if (!isCheckRemoved(king_id))
+		{
+			allowed_cells = JSON.parse(JSON.stringify(allowed_cells_copy));
+			chess_board = JSON.parse(JSON.stringify(chess_board_copy));
+			alert('King in Check');
+			return;
+		}
+	
+	if (king_id == 'wk')
+		king_id = 'bk';
+	else
+		king_id = 'wk';
+	
+	isCheck(king_id);
+	
 	piece_locations[selected_piece_id][0] = to_drop_row;
 	piece_locations[selected_piece_id][1] = to_drop_col;
-	updateChessboard(to_drop_row, to_drop_col);
-	
-	for (var piece in allowed_cells)
-	{
-		if (piece != '')
-			generateAllowedCells(piece, piece_locations[piece][0], piece_locations[piece][1]);
-	}
+	updateKilledPieceTable();
+	killed_piece_id = '';
+	renderChessboard();
 	
 	changeTurnTimer();
+	
+	if (is_check)
+		if (isCheckMate())
+			{alert('Won. Game End');}
 }
 
 function getIndexOfLocation(piece_id)
@@ -239,8 +265,9 @@ function generateAllowedCells(piece_id, current_row, current_col)
 		if (current_col != 0)
 		{
 			var left_cross_piece = getPieceInCell(current_row + addition_factor, current_col - 1);
+			
 			if (left_cross_piece != '')
-				if (areEnemies(right_cross_piece, piece_id))
+				if (areEnemies(left_cross_piece, piece_id))
 				{
 					new_row = current_row + addition_factor;
 					new_col = current_col - 1;
@@ -309,6 +336,8 @@ function generateAllowedCells(piece_id, current_row, current_col)
 			if (new_cell == 'out' || new_cell != 'empty')
 				break;
 		}
+		
+		allowed_cells[piece_id].push([current_row, current_col]);
 	}
 	
 	if (selected_piece_type == 'bishop')
@@ -323,7 +352,6 @@ function generateAllowedCells(piece_id, current_row, current_col)
 			if (new_cell == 'out' || new_cell != 'empty')
 				break;
 		}
-		
 		new_row = current_row + 1;
 		new_col = current_col - 1;
 		for(var i = 0; i < 8; i++)
@@ -350,6 +378,8 @@ function generateAllowedCells(piece_id, current_row, current_col)
 			if (new_cell == 'out' || new_cell != 'empty')
 				break;
 		}
+		
+		allowed_cells[piece_id].push([current_row, current_col]);
 	}
 	
 	if (selected_piece_type == 'queen')
@@ -419,6 +449,8 @@ function generateAllowedCells(piece_id, current_row, current_col)
 			if (new_cell == 'out' || new_cell != 'empty')
 				break;
 		}
+		
+		allowed_cells[piece_id].push([current_row, current_col]);
 	}
 }
 
@@ -506,9 +538,6 @@ function updateChessboard(drop_row, drop_col)
 		killed_piece_id = chess_board[drop_row][drop_col];
 	
 	chess_board[drop_row][drop_col] = selected_piece_id;
-	
-	renderChessboard();
-	//printChessboard();
 }
 
 function renderChessboard()
@@ -526,6 +555,43 @@ function getEnemyKingLocation()
 		alert(black_pieces.bk);
 }
 
+function isCheck(king_id)
+{
+	var king_location = piece_locations[king_id];
+	
+	for(piece_id in allowed_cells)
+		if (piece_id[0] == king_id[0])
+			continue;
+		else{
+			for (move in allowed_cells[piece_id])
+			{
+					output.innerHTML = allowed_cells[piece_id];
+				if (allowed_cells[piece_id][move][0] == king_location[0] && allowed_cells[piece_id][move][1] == king_location[1])
+				{
+					king_in_check = king_id;
+					check_piece = piece_id;
+					is_check = true;
+					return;
+				}
+			}
+		}
+	
+	is_check = false;
+	king_in_check = '';
+	check_piece = '';
+}
+
+function isCheckRemoved(king_id)
+{
+	is_check = false;
+	
+	isCheck(king_id);
+	if (is_check)
+		return false;
+	else
+		return true;
+}
+
 function isCheckMate()
 {
 	return false;
@@ -538,8 +604,8 @@ function changeTurnTimer()
 	else
 		turn = 'b';
 	turn_time_remain = 30;
-	document.getElementById('divBlackTimer').innerHTML = 30;
-	document.getElementById('divWhiteTimer').innerHTML = 30;
+	document.getElementById('divBlackTimer').innerHTML = turn_time_remain;
+	document.getElementById('divWhiteTimer').innerHTML = turn_time_remain;
 	clearInterval(turn_timer);
 	turn_timer = setInterval(turnRunning, 1000);
 }
@@ -576,13 +642,13 @@ function generatePieceHTMLImageTag(piece_id)
 	return img_str;
 }
 
-function printChessboard()
+function printChessboard(chessboard1)
 {
 	output.innerHTML = '';
 	for (var i = 0; i < 8; i++)
 	{
 		for (var j = 0; j < 8; j++)
-			output.innerHTML += chess_board[i][j] + "---";
+			output.innerHTML += chessboard1[i][j] + "---";
 	
 		output.innerHTML += '<br />';
 	}
