@@ -173,34 +173,8 @@
 					<a href="#">Your name</a>
 					<div id="divBlackTimer" class="player-time"></div>
 				</div>
-				<div>
-					<table id="tblKilledWhite" width="100%" height="60px">
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</table>
-					<div id="output1"></div>
+				<div id="divKilledWhite">
+					
 				</div>
 			</div>
 			<div class="card player-card">
@@ -209,34 +183,8 @@
 					<a href="#">Your name</a>
 					<div id="divWhiteTimer" class="player-time"></div>
 				</div>
-				<div>
-					<table id="tblKilledBlack" width="100%" height="60px">
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</table>
-					<div id="output2"></div>
+				<div id="divKilledBlack">
+					
 				</div>
 			</div>
 			<div class="player-card">
