@@ -128,6 +128,7 @@ function drop(ev)
 	
 	var chess_board_copy = JSON.parse(JSON.stringify(chess_board));
 	var allowed_cells_copy = JSON.parse(JSON.stringify(allowed_cells));
+	var piece_locations_copy = JSON.parse(JSON.stringify(piece_locations));
 	
 	var target_piece_id = getPieceInCell(to_drop_row, to_drop_col);
 	killed_piece_id = '';
@@ -136,14 +137,10 @@ function drop(ev)
 		if (areEnemies(selected_piece_id, target_piece_id))
 			killed_piece_id = target_piece_id;
 	
-	if (killed_piece_id != '')
-	{
-		delete piece_locations[killed_piece_id];
-		delete allowed_cells[killed_piece_id];
-		if (check_piece == killed_piece_id)
-			is_check = false;
-	}
 	updateChessboard(to_drop_row, to_drop_col);
+	piece_locations[selected_piece_id][0] = to_drop_row;
+	piece_locations[selected_piece_id][1] = to_drop_col;
+	
 	for (var piece in allowed_cells)
 		if (piece != '')
 			if (piece == selected_piece_id)
@@ -151,33 +148,38 @@ function drop(ev)
 			else
 				generateAllowedCells(piece, piece_locations[piece][0], piece_locations[piece][1]);
 	
-	if (is_check)
-		if (!isCheckRemoved(king_id))
+	if (isCheck(king_id))
+	{			
+		if (!isCheckRemoved(king_id, killed_piece_id))
 		{
 			allowed_cells = JSON.parse(JSON.stringify(allowed_cells_copy));
 			chess_board = JSON.parse(JSON.stringify(chess_board_copy));
+			piece_locations = JSON.parse(JSON.stringify(piece_locations_copy));
 			alert('King in Check');
 			return;
 		}
+	}
 	
-	if (king_id == 'wk')
+	if (killed_piece_id != '')
+	{
+		delete piece_locations[killed_piece_id];
+		delete allowed_cells[killed_piece_id];
+	}
+	
+	if (king_id == 'wk')//selecting enemy king
 		king_id = 'bk';
 	else
 		king_id = 'wk';
 	
-	isCheck(king_id);
-	
-	piece_locations[selected_piece_id][0] = to_drop_row;
-	piece_locations[selected_piece_id][1] = to_drop_col;
 	updateKilledPieceTable();
 	killed_piece_id = '';
 	renderChessboard();
 	
-	changeTurnTimer();
-	
-	if (is_check)
+	if (isCheck(king_id))//checking for enemy king
 		if (isCheckMate())
 			{alert('Won. Game End');}
+	
+	changeTurnTimer();
 }
 
 function getIndexOfLocation(piece_id)
@@ -558,43 +560,56 @@ function getEnemyKingLocation()
 function isCheck(king_id)
 {
 	var king_location = piece_locations[king_id];
-	
 	for(piece_id in allowed_cells)
 		if (piece_id[0] == king_id[0])
 			continue;
-		else{
+		else			
 			for (move in allowed_cells[piece_id])
-			{
-					output.innerHTML = allowed_cells[piece_id];
 				if (allowed_cells[piece_id][move][0] == king_location[0] && allowed_cells[piece_id][move][1] == king_location[1])
 				{
 					king_in_check = king_id;
 					check_piece = piece_id;
 					is_check = true;
-					return;
+					return true;
 				}
-			}
-		}
 	
 	is_check = false;
 	king_in_check = '';
 	check_piece = '';
+	return false;
 }
 
-function isCheckRemoved(king_id)
+function isCheckRemoved(king_id, killed_piece_id)
 {
-	is_check = false;
-	
-	isCheck(king_id);
-	if (is_check)
-		return false;
-	else
+	if (killed_piece_id == check_piece)
+	{
+		check_piece = '';
+		king_in_check = '';
+		is_check = false;
 		return true;
+	}
+	isCheck(king_id);
+	return (!is_check);
 }
 
 function isCheckMate()
 {
-	return false;
+	var in_check = false;
+	for(king_move in allowed_cells[king_in_check])
+		for (piece_id in allowed_cells)
+			if (piece_id[0] != king_in_check[0])
+				for (piece_move in allowed_cells[piece_id])
+					if (allowed_cells[piece_id][piece_move][0] == allowed_cells[king_in_check][king_move])
+						in_check = true;
+	
+	for (check_piece_move in allowed_cells[check_piece])
+		for (piece_id in allowed_cells)
+			if (piece_id[0] == king_in_check[0])
+				for (move in allowed_cells[piece_id])
+					if (allowed_cells[check_piece][check_piece_move][0] == allowed_cells[piece_id][move][0] && allowed_cells[check_piece][check_piece_move][1] == allowed_cells[piece_id][move][1])
+						in_check = false;
+			
+	return in_check;
 }
 
 function changeTurnTimer()
