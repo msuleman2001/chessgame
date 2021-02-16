@@ -512,23 +512,15 @@ function isInAllowedCells(to_drop_row, to_drop_col)
 
 function updateKilledPieceTable()
 {
+	var divKilled;
 	if (killed_piece_id != '')
 	{
-		var killed_piece_html = generatePieceHTMLImageTag(killed_piece_id);
-		
 		if (killed_piece_id.startsWith('b'))
-		{
-			var killed_table = document.getElementById('tblKilledBlack');
-			
-			killed_table.rows[0].cells[killed_index_black].innerHTML = killed_piece_html;
-			killed_index_black++;
-		}
+			divKilled = document.getElementById('divKilledBlack');
 		else
-		{
-			var killed_table = document.getElementById('tblKilledWhite');
-			killed_table.rows[0].cells[killed_index_white].innerHTML = killed_piece_html;
-			killed_index_white++;
-		}
+			divKilled = document.getElementById('divKilledWhite');
+		
+		divKilled.innerHTML += generatePieceHTMLImageTag(killed_piece_id);
 	}
 }
 
