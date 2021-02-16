@@ -74,7 +74,7 @@ var tblChessboard = document.getElementById('tblChessboard');
 //this function will run after timer end
 function startGame(base_url)
 {
-	setBoardColor('blue');
+	setBoardColor('#8B4513');
 }
 
 //this function will setup the color of board
