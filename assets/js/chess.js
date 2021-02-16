@@ -176,8 +176,10 @@ function drop(ev)
 	renderChessboard();
 	
 	if (isCheck(king_id))//checking for enemy king
+	{
 		if (isCheckMate())
-			{alert('Won. Game End');}
+			alert('Won. Game End');
+	}
 	
 	changeTurnTimer();
 }
@@ -585,22 +587,22 @@ function isCheckRemoved(king_id, killed_piece_id)
 }
 
 function isCheckMate()
-{
+{output.innerHTML = '';
 	var in_check = false;
 	for(king_move in allowed_cells[king_in_check])
 		for (piece_id in allowed_cells)
 			if (piece_id[0] != king_in_check[0])
 				for (piece_move in allowed_cells[piece_id])
-					if (allowed_cells[piece_id][piece_move][0] == allowed_cells[king_in_check][king_move])
+					if (allowed_cells[piece_id][piece_move][0] == allowed_cells[king_in_check][king_move][0] && allowed_cells[piece_id][piece_move][1] == allowed_cells[king_in_check][king_move][1])
 						in_check = true;
-	
+					
 	for (check_piece_move in allowed_cells[check_piece])
 		for (piece_id in allowed_cells)
 			if (piece_id[0] == king_in_check[0])
 				for (move in allowed_cells[piece_id])
 					if (allowed_cells[check_piece][check_piece_move][0] == allowed_cells[piece_id][move][0] && allowed_cells[check_piece][check_piece_move][1] == allowed_cells[piece_id][move][1])
 						in_check = false;
-			
+
 	return in_check;
 }
 
