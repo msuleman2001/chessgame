@@ -587,21 +587,57 @@ function isCheckRemoved(king_id, killed_piece_id)
 }
 
 function isCheckMate()
-{output.innerHTML = '';
+{	
 	var in_check = false;
+	
+	//if check piece is able to killed by some piece
+	for (piece_id in allowed_cells)
+		if (piece_id[0] != selected_piece_id[0])
+			for (move in allowed_cells[piece_id])
+				if (allowed_cells[piece_id][move][0] == piece_locations[selected_piece_id][0] && allowed_cells[piece_id][move][1] == piece_locations[selected_piece_id][1])
+					return false;
+		
+	//if king in check may move to some secure location
 	for(king_move in allowed_cells[king_in_check])
 		for (piece_id in allowed_cells)
 			if (piece_id[0] != king_in_check[0])
 				for (piece_move in allowed_cells[piece_id])
 					if (allowed_cells[piece_id][piece_move][0] == allowed_cells[king_in_check][king_move][0] && allowed_cells[piece_id][piece_move][1] == allowed_cells[king_in_check][king_move][1])
 						in_check = true;
-					
-	for (check_piece_move in allowed_cells[check_piece])
+				
+	//if some other piece sacrifice to secure the king
+	if (!selected_piece_id[1] != 'n')
+	{
+		var check_cells = [];
+		var row_add = 0;
+		var col_add = 0;
+		var row_diff = piece_locations[king_in_check][0] - piece_locations[selected_piece_id][0];
+		var col_diff = piece_locations[king_in_check][1] - piece_locations[selected_piece_id][1];
+		
+		if (row_diff != 0)
+			row_add = Math.abs(row_diff) / row_diff;
+		if (col_diff != 0)
+			col_add = Math.abs(col_diff) / col_diff;
+		
+		var row_inc = piece_locations[selected_piece_id][0];
+		var col_inc = piece_locations[selected_piece_id][1];
+		
+		while(row_inc != piece_locations[king_in_check][0] && col_inc != piece_locations[king_in_check][1])
+		{
+			check_cells.push([row_inc, col_inc]);
+			row_inc = row_inc + row_add;
+			col_inc = col_inc + col_add;
+		}
+		
 		for (piece_id in allowed_cells)
 			if (piece_id[0] == king_in_check[0])
 				for (move in allowed_cells[piece_id])
-					if (allowed_cells[check_piece][check_piece_move][0] == allowed_cells[piece_id][move][0] && allowed_cells[check_piece][check_piece_move][1] == allowed_cells[piece_id][move][1])
-						in_check = false;
+					for (var i = 0; i < check_cells.length; i++)
+						if (piece_id != king_in_check)
+							if (allowed_cells[piece_id][move][0] == check_cells[i][0] && allowed_cells[piece_id][move][1] == check_cells[i][1])
+								return false;
+	}
+
 
 	return in_check;
 }
