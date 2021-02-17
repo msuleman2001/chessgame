@@ -25,7 +25,7 @@
 						<td height="50px" width="50px" align="center" valign="middle" id="c00" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="br1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/br.png">
 						</td>
-						<td height="50px" width="50px" align="center" valign="middle" id="c01" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<td height="50px" style="position: absolute;" width="50px" align="center" valign="middle" id="c01" ondrop="drop(event)" ondragover="allowDrop(event)">
 							<img id="bn1" height="30px" draggable="true" ondragstart="drag(event)" src="<?php echo base_url();?>assets/img/pawns/bn.png">
 						</td>
 						<td height="50px" width="50px" align="center" valign="middle" id="c02" ondrop="drop(event)" ondragover="allowDrop(event)">

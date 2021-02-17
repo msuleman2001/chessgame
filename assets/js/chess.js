@@ -55,6 +55,7 @@ var king_in_check = '';
 var check_piece = '';
 var killed_index_black = 0;
 var killed_index_white = 0;
+var hightlighted_cells = [];
 var hidBaseURL = document.getElementById('hidBaseURL');
 changeTurnTimer();
 //this is initial setup for chessboard
@@ -95,9 +96,11 @@ function drag(ev)
 {
 	if (ev.target.id.startsWith(turn))
 	{
+		
 		current_row = ev.target.parentElement.id[1];
 		current_col = ev.target.parentElement.id[2];
 		selected_piece_id = ev.target.id;
+		hightlightAllowedCells();
 	}
 	else
 		alert('its not your turn');
@@ -171,6 +174,9 @@ function drop(ev)
 	else
 		king_id = 'wk';
 	
+	
+	for (highlighted_cell in hightlighted_cells)
+		hightlighted_cells[highlighted_cell].style.backgroundImage = 'none';
 	updateKilledPieceTable();
 	killed_piece_id = '';
 	renderChessboard();
@@ -677,7 +683,7 @@ function generatePieceHTMLImageTag(piece_id)
 {	
 	if (piece_id == '')
 		return '';
-	var img_str = '<img id="piece_id" height="30" draggable="true" ondragstart="drag(event)" src="base_url/assets/img/pawns/piece_img.png">';
+	var img_str = '<img id="piece_id" height="30" draggable="true" style="z-index: 100" ondragstart="drag(event)" src="base_url/assets/img/pawns/piece_img.png">';
 	
 	img_str = img_str.replace('base_url', hidBaseURL.value);
 	img_str = img_str.replace('piece_id', piece_id);
@@ -685,6 +691,18 @@ function generatePieceHTMLImageTag(piece_id)
 	img_str = img_str.replace('piece_img', piece_img);
 	
 	return img_str;
+}
+
+function hightlightAllowedCells()
+{
+	for (allowed_cell in allowed_cells[selected_piece_id])
+	{	
+		var table_cell = document.getElementById('c' + allowed_cells[selected_piece_id][allowed_cell][0] + allowed_cells[selected_piece_id][allowed_cell][1]);
+		
+		table_cell.style.backgroundImage = 'url("' + hidBaseURL.value + '/assets/img/allowed-cell-bg.png")';
+		table_cell.style.backgroundSize = 'cover';
+		hightlighted_cells.push(table_cell);
+	}
 }
 
 function printChessboard(chessboard1)
