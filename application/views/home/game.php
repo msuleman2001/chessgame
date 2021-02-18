@@ -189,8 +189,8 @@
 				</div>
 			</div>
 			<div class="player-card">
-				<button data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-block">End Game</button>
-				<div id="myModal" class="modal fade" role="dialog">
+				<button data-toggle="modal" data-target="#EngGameModal" class="btn btn-danger btn-block">End Game</button>
+				<div id="EngGameModal" class="modal fade" role="dialog">
 					<div class="modal-dialog">
 
 					<!-- Modal content-->
@@ -204,7 +204,26 @@
 							</div>
 							<div class="modal-footer">
 								<a href="#" class="btn btn-primary" data-dismiss="modal">Continue Game</a>
-								<a href="<?php site_url('home/index'); ?>" class="btn btn-danger">End Game</a>
+								<a href="<?php echo site_url('home/index'); ?>" class="btn btn-danger">End Game</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div id="WinGame" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+
+					<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">Game Won</h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<p>Congratulation, You Won the Game. Press OK to go back on main page.</p>
+							</div>
+							<div class="modal-footer">
+								<a href="<?php echo site_url('home/index'); ?>" class="btn btn-primary">OK</a>
 							</div>
 						</div>
 
