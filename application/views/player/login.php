@@ -90,10 +90,10 @@ else
 		<button onclick="signOut()">Sign out</button>
 		<div class="main-art">
 			<div class="two-col-left">
-				<form id="frmLogin" method="post" action="#" class="needs-validation" novalidate="">
+				<form id="frmLogin" method="post" action="<?php echo site_url('Member/perform_login'); ?>" class="needs-validation" novalidate="">
 					<div class="form-group">
 						<label for="email">Email</label>
-						<input id="txtEmail" type="email" class="form-control" name="txtEmail" tabindex="1" required autofocus>
+						<input id="txtPlayerEmail" type="email" class="form-control" name="txtPlayerEmail" tabindex="1" required autofocus>
 						<div class="invalid-feedback">
 							Please fill in your email
 						</div>
@@ -108,7 +108,7 @@ else
 								</a>
 							</div>
 						</div>
-						<input id="txtPassword" type="password" class="form-control" name="txtPassword" tabindex="2" required>
+						<input id="txtPlayerPassword" type="password" class="form-control" name="txtPlayerPassword" tabindex="2" required>
 						<div class="invalid-feedback">
 							please fill in your password
 						</div>
@@ -151,7 +151,7 @@ else
 						Twitter
 					</a>
 				</div>
-				<div class="g-signin2" data-onsuccess="onSignIn"></div>
+				
 				<div class="form-group">
 					<a href="#" class="gg btn-social" tabindex="4">
 						<i class="fab fa-google"></i>
@@ -159,9 +159,8 @@ else
 					</a>
 				</div>
 				<div class="form-group">
-					<a href="#" class="ya btn-social" tabindex="4">
-						<i class="fab fa-yahoo"></i>
-						Yahoo!
+					<a href="#" tabindex="4">
+						<div class="g-signin2 gg btn-social" data-onsuccess="onSignIn"></div>
 					</a>
 				</div>
 			</div>

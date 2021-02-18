@@ -15,15 +15,15 @@
 				<div class="form-group">
 					Sign Up
 				</div>
-				<form id="frmLogin" method="post" action="#" class="needs-validation" novalidate="">
+				<form id="frmLogin" method="post" action="<?php echo site_url('Member/new_member'); ?>" class="needs-validation" novalidate="">
 					<div class="form-group">
-						<input id="txtEmail" type="email" placeholder="Enter Email" class="form-control" name="txtEmail" tabindex="1" required autofocus>
+						<input id="txtPlayerEmail" type="email" placeholder="Enter Email" class="form-control" name="txtPlayerEmail" tabindex="1" required autofocus>
 						<div class="invalid-feedback">
 							Please fill in your email
 						</div>
 					</div>
 					<div class="form-group">
-						<input id="txtPassword" placeholder="Enter Password" type="password" class="form-control" name="txtPassword" tabindex="2" required>
+						<input id="txtPlayerPassword" placeholder="Enter Password" type="password" class="form-control" name="txtPlayerPassword" tabindex="2" required>
 						<div class="invalid-feedback">
 							please fill in your password
 						</div>
@@ -32,7 +32,7 @@
 						<input id="txtConfirmPassword" placeholder="Confirm Password" type="password" class="form-control" name="txtConfirmPassword" tabindex="2" required>
 					</div>
 					<div class="form-group">
-						<select class="form-control selectric" id="cmbCountry">
+						<select class="form-control selectric" id="cmbCountry" name="cmbCountry">
 							<option>USA</option>
 							<option>England</option>
 							<option>Brazil</option>

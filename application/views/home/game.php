@@ -203,7 +203,7 @@
 							</div>
 							<div class="modal-footer">
 								<a href="#" class="btn btn-primary" data-dismiss="modal">Continue Game</a>
-								<a href="<?php site_url('home/game'); ?>" class="btn btn-danger">End Game</a>
+								<a href="<?php site_url('home/index'); ?>" class="btn btn-danger">End Game</a>
 							</div>
 						</div>
 

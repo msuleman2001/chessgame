@@ -23,12 +23,12 @@
 					Quick Game
 				</div>
 			</a>
-			<a class="card card-quater-top-right" href="<?php echo site_url('member'); ?>">
+			<a class="card card-quater-top-right" href="<?php echo site_url('player'); ?>">
 				<div>
 					Login
 				</div>
 			</a>
-			<a class="card card-quater-bottom-left" href="<?php echo site_url('member/signup')?>">
+			<a class="card card-quater-bottom-left" href="<?php echo site_url('player/signup')?>">
 				<div>
 					Signup
 				</div>
