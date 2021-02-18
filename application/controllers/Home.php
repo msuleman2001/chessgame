@@ -13,9 +13,10 @@ class Home extends CI_Controller {
 		$this->load->view('home/home');
 	}
 	
-	public function game()
+	public function game($game_type)
 	{
-		$this->load->view('home/game');
+		$data["game_type"] = $game_type;
+		$this->load->view("home/game", $data);
 	}
 }
 

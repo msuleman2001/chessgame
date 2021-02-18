@@ -9,6 +9,7 @@
 		<nav class="navbar navbar-expand-lg main-navbar">
 			<div class="mr-auto"></div>
 			<?php 
+				
 				//if ($user_data)
 					//echo $user_menu;
 				//else
@@ -210,16 +211,16 @@
 					</div>
 				</div>
 			</div>
-			<div id="output"></div>
+			<div id="output" style="background-color: #fff;"></div>
 		</div>
-		<input type="hidden" id="hidBaseURL" value="<?php echo base_url(); ?>"/>
-		<script src="<?php echo base_url();?>assets/chessboardjs-1.0.0/js/chessboard-1.0.0.js"></script>
-		<script src="<?php echo base_url();?>assets/chessboardjs-1.0.0/js/chessboard-1.0.0.min.js"></script>
+		<input type="hidden" id="hidBaseURL" value="<?php echo base_url(); ?>" />
+		<input type="hidden" id="hidGameType" value="<?php echo $game_type; ?>" />
 		<script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/chess.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/easy-opponent.js"></script>
 		<script>
 			var timer = setInterval(gameStartTimer, 1000);
 			var seconds_rem = 5;

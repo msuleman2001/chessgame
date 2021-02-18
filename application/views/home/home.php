@@ -18,7 +18,7 @@
 			?>
 		</nav>
 		<div class="main-art">
-			<a class="card card-quater-top-left" href="<?php echo site_url('home/game'); ?>">
+			<a class="card card-quater-top-left" href="<?php echo site_url('home/game/1'); ?>">
 				<div>
 					Quick Game
 				</div>

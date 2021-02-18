@@ -43,6 +43,7 @@ var allowed_cells = {"bp1": [[2, 0], [3, 0]],
 					 };
 
 var turn = 'b';
+var game_type = document.getElementById('hidGameType').value;
 var turn_time_remain = 30;
 var turn_timer;
 var killed_piece_id = '';
@@ -114,6 +115,18 @@ function drop(ev)
 	else
 		cell_id = ev.target.id;
 	
+	perform_move(cell_id);
+	if (game_type == 1)
+	{
+		selected_piece_id = selectPiece(piece_locations, 'b');
+		cell_id = systemTurn(selected_piece_id);
+		perform_move(cell_id);
+		
+	}
+}
+
+function perform_move(cell_id)
+{
 	var king_id = '';
 	
 	if (selected_piece_id.startsWith('b'))
@@ -128,7 +141,7 @@ function drop(ev)
 	
 	if (!is_allowed)
 		return;
-	
+	alert();
 	var chess_board_copy = JSON.parse(JSON.stringify(chess_board));
 	var allowed_cells_copy = JSON.parse(JSON.stringify(allowed_cells));
 	var piece_locations_copy = JSON.parse(JSON.stringify(piece_locations));
@@ -657,6 +670,7 @@ function changeTurnTimer()
 	turn_time_remain = 30;
 	document.getElementById('divBlackTimer').innerHTML = turn_time_remain;
 	document.getElementById('divWhiteTimer').innerHTML = turn_time_remain;
+	
 	clearInterval(turn_timer);
 	turn_timer = setInterval(turnRunning, 1000);
 }
@@ -695,6 +709,7 @@ function generatePieceHTMLImageTag(piece_id)
 
 function hightlightAllowedCells()
 {
+	hightlighted_cells = [];
 	for (allowed_cell in allowed_cells[selected_piece_id])
 	{	
 		var table_cell = document.getElementById('c' + allowed_cells[selected_piece_id][allowed_cell][0] + allowed_cells[selected_piece_id][allowed_cell][1]);
@@ -708,6 +723,7 @@ function hightlightAllowedCells()
 function printChessboard(chessboard1)
 {
 	output.innerHTML = '';
+	
 	for (var i = 0; i < 8; i++)
 	{
 		for (var j = 0; j < 8; j++)
