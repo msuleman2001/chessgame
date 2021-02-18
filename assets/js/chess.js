@@ -141,7 +141,7 @@ function perform_move(cell_id)
 	
 	if (!is_allowed)
 		return;
-	alert();
+	
 	var chess_board_copy = JSON.parse(JSON.stringify(chess_board));
 	var allowed_cells_copy = JSON.parse(JSON.stringify(allowed_cells));
 	var piece_locations_copy = JSON.parse(JSON.stringify(piece_locations));
