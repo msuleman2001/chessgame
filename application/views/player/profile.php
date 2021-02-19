@@ -11,73 +11,13 @@
 			<div class="mr-auto"></div>
 		</nav>
 		<div class="main-art">
-			<div class="two-col-left">
-				<div class="form-group">
-					Sign Up
-				</div>
-				<form id="frmLogin" method="post" action="<?php echo site_url('Member/new_member'); ?>" class="needs-validation" novalidate="">
-					<div class="form-group">
-						<input id="txtPlayerEmail" type="email" placeholder="Enter Email" class="form-control" name="txtPlayerEmail" tabindex="1" required autofocus>
-						<div class="invalid-feedback">
-							Please fill in your email
-						</div>
-					</div>
-					<div class="form-group">
-						<input id="txtPlayerPassword" placeholder="Enter Password" type="password" class="form-control" name="txtPlayerPassword" tabindex="2" required>
-						<div class="invalid-feedback">
-							please fill in your password
-						</div>
-					</div>
-					<div class="form-group">
-						<input id="txtConfirmPassword" placeholder="Confirm Password" type="password" class="form-control" name="txtConfirmPassword" tabindex="2" required>
-					</div>
-					<div class="form-group">
-						<select class="form-control selectric" id="cmbCountry" name="cmbCountry">
-							<option>USA</option>
-							<option>England</option>
-							<option>Brazil</option>
-							<option>Canada</option>
-							<option>Germany</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-							Sign Up
-						</button>
-					</div>
-                </form>
-			</div>
-			<div class="two-col-right">
-				<div class="form-group">
-					<span>
-						Sign Up with Social Media
-					</span>
-				</div>
-				<div class="form-group">
-					<a href="#" class="fb btn-social" tabindex="4">
-						<i class="fab fa-facebook-f"></i> 
-						Facebook
-					</a>
-				</div>
-				<div class="form-group">
-					<a href="#" class="tw btn-social" tabindex="4">
-						<i class="fab fa-twitter"></i>
-						Twitter
-					</a>
-				</div>
-				<div class="form-group">
-					<a href="#" class="gg btn-social" tabindex="4">
-						<i class="fab fa-google"></i>
-						Google
-					</a>
-				</div>
-				<div class="form-group">
-					<a href="#" class="ya btn-social" tabindex="4">
-						<i class="fab fa-yahoo"></i>
-						Yahoo!
-					</a>
-				</div>
-			</div>
+			<?php
+				if ($_SESSION["player_data"])
+				{
+					$player = $_SESSION["player_data"];
+					echo "<img src='" . base_url() . "/assets/img/" .  $player->player_image . "' height='60px' width='60px' class='player-profile-image' />";
+				}
+			?>
 		</div>
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/scripts.js"></script>

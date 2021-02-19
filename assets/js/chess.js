@@ -119,6 +119,8 @@ function drop(ev)
 	if (game_type == 1)
 	{
 		selected_piece_id = selectPiece(piece_locations, 'b');
+		current_row = piece_locations[selected_piece_id][0];
+		current_col = piece_locations[selected_piece_id][1];
 		cell_id = systemTurn(selected_piece_id);
 		perform_move(cell_id);
 		
@@ -197,7 +199,7 @@ function perform_move(cell_id)
 	if (isCheck(king_id))//checking for enemy king
 	{
 		if (isCheckMate())
-			alert('Won. Game End');
+			$("#WinGame").modal();
 	}
 	
 	changeTurnTimer();

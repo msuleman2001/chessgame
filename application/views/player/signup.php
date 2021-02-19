@@ -15,7 +15,7 @@
 				<div class="form-group">
 					Sign Up
 				</div>
-				<form id="frmLogin" method="post" action="<?php echo site_url('Member/new_member'); ?>" class="needs-validation" novalidate="">
+				<form id="frmLogin" method="post" action="<?php echo site_url('Player/new_player'); ?>" class="needs-validation" novalidate="">
 					<div class="form-group">
 						<input id="txtPlayerEmail" type="email" placeholder="Enter Email" class="form-control" name="txtPlayerEmail" tabindex="1" required autofocus>
 						<div class="invalid-feedback">

@@ -8,8 +8,8 @@ class Home extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['user_data'] = $this->session->userdata('user_data');
-		$data['user_menu'] = $this->load->view('home/user_menu', $data, true);
+		//$data['user_data'] = $this->session->userdata('user_data');
+		//$data['user_menu'] = $this->load->view('home/user_menu', $data, true);
 		$this->load->view('home/home');
 	}
 	

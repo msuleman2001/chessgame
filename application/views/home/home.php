@@ -11,8 +11,8 @@
 		<nav class="navbar navbar-expand-lg main-navbar">
 			<div class="mr-auto"></div>
 			<?php 
-				if ($user_data)
-					echo $user_menu;
+				//if ($user_data)
+					//echo $user_menu;
 				//else
 					//echo "<a href='#' class='login-button btn btn-primary'>Login</a>";
 			?>
