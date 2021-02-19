@@ -134,50 +134,9 @@ else
 				</div>
 			</div>
 			<div class="two-col-right">
-				<div class="form-group">
-					<span>
-						Login with Social Media
-					</span>
-				</div>
-				<div class="form-group">
-					<a href="<?php echo $fb_login_url;?>" class="fb btn-social" tabindex="4">
-						<i class="fab fa-facebook-f"></i> 
-						Facebook
-					</a>
-				</div>
-				<div class="form-group">
-					<a href="#" class="tw btn-social" tabindex="4">
-						<i class="fab fa-twitter"></i>
-						Twitter
-					</a>
-				</div>
-				
-				<div class="form-group">
-					<a href="#" class="gg btn-social" tabindex="4">
-						<i class="fab fa-google"></i>
-						Google
-					</a>
-				</div>
-				<div class="form-group">
-					<a href="#" tabindex="4">
-						<div class="g-signin2 gg btn-social" data-onsuccess="onSignIn"></div>
-					</a>
-				</div>
+				<img src="img_girl.jpg"  width="500" height="600">
 			</div>
 		</div>
-		<script>
-    function onSignIn(googleUser) {
-      // get user profile information
-      console.log(googleUser.getBasicProfile())
-    }
-	
-	function signOut() {
-  gapi.auth2.getAuthInstance().signOut().then(function() {
-    console.log('user signed out')
-  })
-}
-  </script>
-  
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/scripts.js"></script>
 		<script src="js/custom.js"></script>
