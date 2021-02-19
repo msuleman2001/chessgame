@@ -16,7 +16,7 @@ class Player extends CI_Controller {
 		$this->load->view('player/signup');
 	}
 	
-	public function new_member()
+	public function new_player()
 	{
 		$this->load->model("PlayerModel");
 		$player_data["player_id"] = 0;
@@ -42,11 +42,12 @@ class Player extends CI_Controller {
 	{
 		$this->load->model("PlayerModel");
 		$players = $this->PlayerModel->select_players();
-		foreach($players->result() as $row)
-			if ($row->player_email == $player_email && $row->player_password == $player_password)
+		foreach($players->result() as $player)
+			if ($player->player_email == $player_email && $player->player_password == $player_password)
+			{
+				$this->session->set_userdata('player_data', $player);
 				$this->load->view("player/profile");
-			
-		$this->load->view("player/login");
+			}
 	}
 	
 	public function change_password()

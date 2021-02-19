@@ -8,6 +8,17 @@
 	width: 30px;
 }
 
+.player-profile-image
+{
+	border: solid 1px red;
+	position: relative;
+	top: 30px;
+	left: 50px;
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+}
+
 .user-name
 {
 	font-size: 14px;

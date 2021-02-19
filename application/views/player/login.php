@@ -90,7 +90,7 @@ else
 		<button onclick="signOut()">Sign out</button>
 		<div class="main-art">
 			<div class="two-col-left">
-				<form id="frmLogin" method="post" action="<?php echo site_url('Member/perform_login'); ?>" class="needs-validation" novalidate="">
+				<form id="frmLogin" method="post" action="<?php echo site_url('Player/perform_login'); ?>" class="needs-validation" novalidate="">
 					<div class="form-group">
 						<label for="email">Email</label>
 						<input id="txtPlayerEmail" type="email" class="form-control" name="txtPlayerEmail" tabindex="1" required autofocus>
