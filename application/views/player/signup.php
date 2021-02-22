@@ -47,37 +47,7 @@
 					</div>
                 </form>
 			</div>
-			<div class="two-col-right">
-				<div class="form-group">
-					<span>
-						Sign Up with Social Media
-					</span>
-				</div>
-				<div class="form-group">
-					<a href="#" class="fb btn-social" tabindex="4">
-						<i class="fab fa-facebook-f"></i> 
-						Facebook
-					</a>
-				</div>
-				<div class="form-group">
-					<a href="#" class="tw btn-social" tabindex="4">
-						<i class="fab fa-twitter"></i>
-						Twitter
-					</a>
-				</div>
-				<div class="form-group">
-					<a href="#" class="gg btn-social" tabindex="4">
-						<i class="fab fa-google"></i>
-						Google
-					</a>
-				</div>
-				<div class="form-group">
-					<a href="#" class="ya btn-social" tabindex="4">
-						<i class="fab fa-yahoo"></i>
-						Yahoo!
-					</a>
-				</div>
-			</div>
+			
 		</div>
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/scripts.js"></script>
