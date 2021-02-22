@@ -1,5 +1,5 @@
 <ul class="navbar-list">
-	<li class="navbar-list-item">
+	<!--<li class="navbar-list-item">
 		<div class="user-menu">
 			<a href="#" class="nav-link beep">
 				<i class="far fa-envelope"></i>
@@ -15,7 +15,7 @@
 					<li class="user-menu-list-item user-menu-list-item-read">
 						<a href="#" class="">
 							<div class="user-menu-item-img">
-								<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
+								<img alt="image" src="<?php //echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
 								<div class="is-online"></div>
 							</div>
 							<div class="user-menu-item-text">
@@ -28,7 +28,7 @@
 					<li class="user-menu-list-item user-menu-list-item-read">
 						<a href="#" class="">
 							<div class="user-menu-item-img">
-								<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
+								<img alt="image" src="<?php //echo base_url(); ?>assets/img/avatar-1.png" class="rounded-circle user-img">
 								<div class="is-online"></div>
 							</div>
 							<div class="user-menu-item-text">
@@ -168,17 +168,19 @@
 				</div>
 			</div>
 		</div>
-	</li>
+	</li>-->
 	<li class="navbar-list-item">
 		<div class="user-name">
 			<a href="#" class="user-name">
-				<img alt="image" src="<?php echo base_url(); ?>assets/img/avatar-1.png" class="user-img rounded-circle mr-1" />Player Name
+				<img alt="image" src="<?php echo (base_url() . "/assets/img/" . $player->player_image ); ?>" class="user-img rounded-circle mr-1" onload="updateLastSeen(<?php echo $player->player_id; ?>, '<?php echo base_url(); ?>');" />
+				<?php echo $player->player_name; ?>
 			</a>
 			<div class="user-menu-settings-profile">
-				<div class="user-menu-header">Logged in 5 min ago</div>
-				<a href="features-profile.html" class="user-menu-list-item-profile has-icon"><i class="far fa-user"></i>Profile</a>
-				<a href="features-activities.html" class="user-menu-list-item-profile has-icon"><i class="fas fa-bolt"></i>Activities</a>
-				<a href="features-settings.html" class="user-menu-list-item-profile has-icon"><i class="fas fa-cog"></i>Settings</a>
+				<div id="divLoginTime" class="user-menu-header"></div>
+				<a href="#" class="user-menu-list-item-profile has-icon"><i class="far fa-user"></i>Profile</a>
+				<a href="" class="user-menu-list-item-profile has-icon"><i class="fas fa-bolt"></i>Activities</a>
+				<a href="" class="user-menu-list-item-profile has-icon"><i class="fas fa-cog"></i>Settings</a>
+				<a href="<?php echo (site_url() . "/player/list_player"); ?>" class="user-menu-list-item-profile has-icon"><i class="fas fa-cog"></i>List Players</a>
 				<a href="#" class="user-menu-list-item-profile has-icon">
 					<i class="fas fa-sign-out-alt"></i>Logout
 				</a>

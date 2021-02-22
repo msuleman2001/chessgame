@@ -14,13 +14,33 @@
 			?>
 		</nav>
 		<div class="main-art">
-			<?php
-				if ($_SESSION["player_data"])
-				{
-					$player = $_SESSION["player_data"];
-					echo "<img src='" . base_url() . "/assets/img/" .  $player->player_image . "' height='60px' width='60px' class='player-profile-image' />";
-				}
-			?>
+			<table class="table">
+				<thead>
+				<tr>
+					<th width="10%">#</th>
+					<th width="20%">Name</th>
+					<th width="20%">Email</th>
+					<th width="30%">Last Seen</th>
+					<th>Time Elapsed</th>
+				</tr>
+				</thead>
+				<tbody>
+					<?php
+						if ($loggedin_players)
+						{
+							for ($count = 0; $count < count($loggedin_players); $count++)
+							{
+								echo "<tr>";
+								echo "<td>" . ($count + 1) . "</td>";
+								echo "<td>" . $loggedin_players[$count]->player_name . "</td>";
+								echo "<td>" . $loggedin_players[$count]->player_email . "</td>";
+								echo "<td>" . $loggedin_players[$count]->last_seen . "</td>";
+								echo "<td>" . $loggedin_players[$count]->time_elapsed . "</td>";
+							}
+						}
+					?>
+				</tbody>
+			</table>
 		</div>
 		<script src="<?php echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>

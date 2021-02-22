@@ -10,7 +10,7 @@
 
 .player-profile-image
 {
-	border: solid 1px red;
+	border: solid 1px blue;
 	position: relative;
 	top: 30px;
 	left: 50px;
@@ -34,8 +34,7 @@
 .navbar-list
 {
 	position: relative;
-	top: -10px;
-	
+	top: -10px;	
 }
 
 .navbar-list-item
