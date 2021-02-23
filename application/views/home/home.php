@@ -1,8 +1,6 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/chess.css">
-		
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylew.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/fa/css/all.css">
 
